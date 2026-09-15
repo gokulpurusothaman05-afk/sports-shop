@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span><img src="assets/images/logo.webp" alt="Stackly" style="height: 14px; width: auto; vertical-align: -2px; margin-right: 6px; display: inline-block;"> STACKLY ATHLETE CLUB • SIGN IN FOR INSTANT REWARDS</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide nav-wrapper">
+      <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+      <nav class="main-nav">
+        <a href="cricket.html" class="nav-link">Cricket</a>
+        <a href="badminton.html" class="nav-link">Badminton</a>
+        <a href="running.html" class="nav-link">Running</a>
+        <a href="gym.html" class="nav-link">Gym & Fitness</a>
+        <a href="football.html" class="nav-link">Football</a>
+        <a href="new-in.html" class="nav-link">New In</a>
+      </nav>
+      <div>
+        <a href="signup.html" class="action-btn-sm" style="background: var(--accent-black); color: #fff; border-radius: var(--radius-full); padding: 8px 18px;">Create Account</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page-container">
+    <!-- No hover float / tilt effect on auth card as requested -->
+    <div class="auth-card-wrap">
+      
+      <div class="auth-header">
+        <div class="auth-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></div>
+        <h1 class="auth-title" id="auth-form-title">Customer Sign In</h1>
+        <p class="auth-sub" id="auth-form-sub">Access your orders, wishlist, and fast checkout</p>
+      </div>
+
+      <!-- Role Switcher (Customer vs Admin) -->
+      <div class="role-switch-tabs">
+        <button type="button" class="role-tab-btn active" id="tab-customer">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Customer Login
+        </button>
+        <button type="button" class="role-tab-btn" id="tab-admin">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Admin Portal
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <form class="auth-form" id="login-form">
+        <input type="hidden" id="auth-role-input" value="customer">
+
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <div class="form-input-wrap">
+            <svg class="form-input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <input type="email" id="auth-email" placeholder="name@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="form-input-wrap">
+            <svg class="form-input-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <input type="password" id="auth-password" placeholder="•••••••• (min 6 characters)" minlength="6" required autocomplete="current-password">
+          </div>
+        </div>
+
+        <div class="form-options-row">
+          <label class="checkbox-label">
+            <input type="checkbox" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="404.html" class="forgot-link">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="auth-submit-btn" id="auth-submit-btn">
+          <span>Sign In as Customer</span>
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+      </form>
+
+      <div class="auth-footer-prompt">
+        Don't have a Stackly Account? <a href="signup.html">Sign Up Now</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="toast-container"></div>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+  <style>
+    .pdp-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .pdp-gallery-wrap {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 480px;
+      box-shadow: var(--shadow-sm);
+    }
+    .pdp-gallery-wrap img {
+      max-width: 90%;
+      max-height: 400px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
+      transition: transform var(--transition-normal);
+    }
+    .pdp-gallery-wrap:hover img {
+      transform: scale(1.06) rotate(-2deg);
+    }
+    .pdp-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .pdp-title-text {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .pdp-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .pdp-current-price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+    .pdp-orig-price {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+    .pdp-size-btn {
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      background: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      transition: var(--transition-fast);
+      cursor: pointer;
+    }
+    .pdp-size-btn:hover {
+      border-color: var(--text-primary);
+    }
+    .pdp-size-btn.active {
+      background: var(--accent-black);
+      color: #ffffff;
+      border-color: var(--accent-black);
+    }
+    .pincode-checker-box {
+      background: var(--bg-card-muted);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+    }
+    .pincode-input-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .pincode-input-group input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+      background: #ffffff;
+      font-weight: 600;
+    }
+  </style>
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="top-bar">
+    <span><img src="assets/images/logo.webp" alt="Stackly" style="height: 14px; width: auto; vertical-align: -2px; margin-right: 6px; display: inline-block;"> FREE EXPRESS DELIVERY ACROSS INDIA ON ORDERS ABOVE ₹999</span>
+    <span class="top-bar-badge">USE CODE: STACKLY10 FOR 10% OFF</span>
+  </div>
+
+  <header class="site-header">
+    <div class="container-wide nav-wrapper">
+      <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+      <nav class="main-nav">
+        <a href="cricket.html" class="nav-link">Cricket</a>
+        <a href="badminton.html" class="nav-link">Badminton</a>
+        <a href="running.html" class="nav-link">Running</a>
+        <a href="gym.html" class="nav-link">Gym & Fitness</a>
+        <a href="football.html" class="nav-link">Football</a>
+        <a href="new-in.html" class="nav-link">New In <span class="nav-badge-new">NEW</span></a>
+      </nav>
+            <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="login.html" class="account-btn header-account-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Sign In</span>
+        </a>
+
+        <button class="action-icon-btn mobile-menu-toggle" aria-label="Toggle Navigation">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-nav-header"><div class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></div><button class="action-icon-btn mobile-nav-close"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a><a href="cricket.html">Cricket</a><a href="badminton.html">Badminton</a><a href="running.html">Running</a><a href="gym.html">Gym & Fitness</a><a href="football.html">Football</a><a href="new-in.html">New Drops</a>
+    </div>
+  </aside>
+
+  <div class="container" style="padding-top: 30px;">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> <a href="new-in.html">Products</a> <span>/</span> <span id="pdp-breadcrumb-name">Product Details</span>
+    </div>
+  </div>
+
+  <main class="container" style="padding-bottom: 80px; padding-top: 10px;">
+    <div class="pdp-grid">
+      
+      <div class="pdp-gallery-wrap">
+        <img id="pdp-main-img" src="assets/images/cricket-bat.webp" alt="Product Showcase" loading="eager">
+      </div>
+
+      <div class="pdp-info-panel">
+        <div>
+          <span class="card-pill-badge" id="pdp-badge">🏏 Tournament Grade</span>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-top: 8px;" id="pdp-category">
+            Cricket Equipment
+          </div>
+          <h1 class="pdp-title-text" id="pdp-title">English Willow Cricket Bat Grade 1</h1>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.88rem;">
+          <span style="color: #f59e0b; font-weight: 800;">★ <span id="pdp-rating-val">5.0</span></span>
+          <span style="color: var(--text-muted);" id="pdp-reviews-count">(148 reviews)</span>
+          <span style="color: #10b981; font-weight: 700; margin-left: 8px;">• In Stock (Fast Dispatch)</span>
+        </div>
+
+        <div class="pdp-price-row">
+          <span class="pdp-current-price" id="pdp-price">₹14,999</span>
+          <span class="pdp-orig-price" id="pdp-orig-price">₹18,999</span>
+          <span style="font-size: 0.85rem; font-weight: 700; color: #10b981; background: #f0fdf4; padding: 3px 8px; border-radius: var(--radius-xs);">Inclusive of all Indian Taxes (GST)</span>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;" id="pdp-description">
+          Handcrafted Grade 1 English Willow cricket bat with 39mm thick power edges, balanced pickup, and immense sweet spot engineered for Indian pitch conditions.
+        </p>
+
+        <!-- Size / Spec Selector -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase;">Select Specification / Size</div>
+            <a href="404.html" style="font-size: 0.82rem; font-weight: 700; color: #ec4899; text-decoration: underline;">Size Guide</a>
+          </div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;" id="pdp-sizes-container"></div>
+        </div>
+
+        <!-- Quantity & Add to Bag -->
+        <div style="display: flex; gap: 14px; align-items: center;">
+          <div class="qty-control" style="padding: 6px 12px;">
+            <button type="button" class="qty-btn" id="pdp-qty-minus" aria-label="Decrease quantity">−</button>
+            <input type="number" id="pdp-qty-input" value="1" min="1" max="10" style="width: 36px; text-align: center; border: none; font-weight: 800; font-size: 1rem; background: transparent;">
+            <button type="button" class="qty-btn" id="pdp-qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+          
+          <button class="cart-checkout-btn" id="pdp-add-bag-btn" style="flex: 1; margin-bottom: 0;">
+            Add To Bag
+          </button>
+
+          <button class="wishlist-toggle-btn" id="pdp-wishlist-btn" style="width: 50px; height: 50px; border: 1px solid var(--border-light);" title="Wishlist">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+
+        <!-- PIN Code Delivery Checker -->
+        <div class="pincode-checker-box">
+          <div style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; color: var(--text-primary); display: flex; align-items: center; gap: 6px;">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Check Delivery Speed & COD in India
+          </div>
+          <div class="pincode-input-group">
+            <input type="text" id="pincode-input" placeholder="Enter 6-digit PIN (e.g. 560001, 400001, 110001)" maxlength="6">
+            <button type="button" class="action-btn-sm" id="pincode-check-btn" style="background: var(--accent-black); color: #fff; padding: 0 18px; border-radius: var(--radius-sm);">Check</button>
+          </div>
+          <div id="pincode-result-msg"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Related Products -->
+    <section style="margin-top: 80px;">
+      <h3 class="section-title-condensed" style="font-size: 2.2rem; margin-bottom: 24px;">YOU MIGHT ALSO LIKE</h3>
+      <div class="products-grid" id="related-products-grid"></div>
+    </section>
+
+  </main>
+
+    <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+          <p class="footer-tagline">
+            Engineered for relentless performance. Elevating Indian athletes across running tracks, cricket pitches, and gym floors.
+          </p>
+          <div class="footer-social-links">
+            <a href="404.html" class="social-btn" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="404.html" class="social-btn" aria-label="YouTube"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="404.html" class="social-btn" aria-label="Twitter X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Sports Categories</div>
+          <div class="footer-links-list">
+            <a href="cricket.html">Cricket Equipment</a>
+            <a href="badminton.html">Badminton Tournament</a>
+            <a href="running.html">Marathon & Running</a>
+            <a href="gym.html">Gym & Weights</a>
+            <a href="football.html">Football Cleats & Balls</a>
+          </div>
+        </div>
+
+                <div>
+          <div class="footer-col-title">Customer Care</div>
+          <div class="footer-links-list">
+            <a href="404.html">Track Your Order</a>
+            <a href="404.html">Saved Wishlist</a>
+            <a href="404.html">Store Locator India</a>
+            <a href="404.html">Return & Refund Policy</a>
+          </div>
+        </div>
+
+                <div>
+          <div class="footer-col-title">Portals</div>
+          <div class="footer-links-list">
+            <a href="404.html">Customer Sign In</a>
+            <a href="404.html">Join Stackly Club</a>
+            <a href="404.html">Admin & Staff Portal</a>
+            <a href="404.html">Store Analytics</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Sports India Private Limited. All Rights Reserved.</div>
+        <div class="payment-gateways-list">
+          <span class="pay-badge">UPI</span>
+          <span class="pay-badge">RuPay</span>
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">Mastercard</span>
+          <span class="pay-badge">Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header"><div class="cart-drawer-title">YOUR BAG</div><button class="cart-drawer-close-btn"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer"><div class="cart-subtotal-row"><span>Estimated Total</span><span class="cart-drawer-subtotal">₹0</span></div><a href="404.html" class="cart-checkout-btn">Proceed to Checkout</a></div>
+  </aside>
+
+  <div class="search-modal-overlay"><div class="search-modal-card"><div class="search-input-box"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="text" class="search-input-field" placeholder="Search gear..."><button class="search-close-btn">ESC</button></div><div class="search-results-area"></div></div></div>
+  <div class="toast-container"></div>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

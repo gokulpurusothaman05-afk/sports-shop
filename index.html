@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="India's premier sports store for cricket, badminton, running, gym, and football equipment. Explore high-performance sports shoes, gear, and apparel.">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span><img src="assets/images/logo.webp" alt="Stackly" style="height: 14px; width: auto; vertical-align: -2px; margin-right: 6px; display: inline-block;"> FREE EXPRESS DELIVERY ACROSS INDIA ON ORDERS ABOVE ₹999</span>
+    <span class="top-bar-badge">USE CODE: STACKLY10 FOR 10% OFF</span>
+  </div>
+
+  <!-- Common Site Header -->
+  <header class="site-header">
+    <div class="container-wide nav-wrapper">
+      <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+
+      <!-- Updated 5+ Sports Categories Navigation -->
+      <nav class="main-nav">
+        <a href="cricket.html" class="nav-link">Cricket</a>
+        <a href="badminton.html" class="nav-link">Badminton</a>
+        <a href="running.html" class="nav-link">Running</a>
+        <a href="gym.html" class="nav-link">Gym & Fitness</a>
+        <a href="football.html" class="nav-link">Football</a>
+        <a href="new-in.html" class="nav-link">New In <span class="nav-badge-new">NEW</span></a>
+      </nav>
+
+      <!-- Header Actions -->
+            <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="login.html" class="account-btn header-account-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span>Sign In</span>
+        </a>
+
+        <button class="action-icon-btn mobile-menu-toggle" aria-label="Toggle Navigation">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-out Menu Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></div>
+      <button class="action-icon-btn mobile-nav-close">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="cricket.html">Cricket Gear</a>
+      <a href="badminton.html">Badminton</a>
+      <a href="running.html">Running & Track</a>
+      <a href="gym.html">Gym & Fitness</a>
+      <a href="football.html">Football & Turf</a>
+      <a href="new-in.html">New Drops</a>
+      <a href="cart.html">Shopping Bag</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="login.html" class="action-btn-sm" style="text-align: center; background: var(--accent-black); color: #fff; padding: 12px; border-radius: var(--radius-full);">Sign In / Register</a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       HERO SECTION - EXACT MATCH TO REFERENCE IMAGE
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="container-wide" style="position: relative; width: 100%;">
+      
+      <!-- Giant Multi-Line Gradient Typography Backdrop -->
+      <div class="hero-backdrop-text">
+        <span class="gradient-text">JUST</span>
+        <span class="gradient-text">DO</span>
+        <span class="gradient-text">IT</span>
+      </div>
+
+      <div class="hero-layout-grid">
+        
+        <!-- Hero Left Column -->
+        <div class="hero-left-column">
+          <div class="hero-editorial-top-left">
+            The shop air invincible run featured our softest, most responsive cushioning.
+          </div>
+
+          <!-- Floating Shoe Card 1 (Purple Ginnis Immortality) -->
+          <div class="hero-floating-card tilt-effect">
+            <div class="card-thumb">
+              <img src="assets/images/shoe-purple.webp" alt="Ginnis Immortality All-Court 3" loading="lazy">
+            </div>
+            <div class="card-info">
+              <div>
+                <div class="product-name">Ginnis Immortality</div>
+                <div class="product-price">₹4,899</div>
+              </div>
+              <div class="quick-add-box" data-product-id="sp-227">
+                <button class="quick-add-btn" onclick="handleCardAdd('sp-227', event)" title="Add to Bag">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-editorial-bottom-left">
+            It is a long established fact that an athlete will be powered by responsive cushioning for endurance and peak agility.
+          </div>
+        </div>
+
+        <!-- Hero Center Stage (Leaping Athlete Cutout) -->
+       
+
+        <!-- Hero Right Column -->
+        <div class="hero-right-column">
+          <div class="hero-editorial-top-right">
+            The shop air force 1 brings back the '82 hardwood icon into an everyday style engineered for Indian terrain.
+          </div>
+
+          <!-- Explore More Circular Rotating Badge -->
+          <a href="new-in.html" class="explore-circle-badge" title="Explore Collection">
+            <span>Explore<br>More</span>
+          </a>
+
+          <!-- Floating Shoe Card 2 (Pink Deldor Shoes Air) -->
+          <div class="hero-floating-card tilt-effect">
+            <div class="card-thumb">
+              <img src="assets/images/shoe-pink.webp" alt="Deldor Shoes Air Vapor Cushion" loading="lazy">
+            </div>
+            <div class="card-info">
+              <div>
+                <div class="product-name">Deldor Shoes Air</div>
+                <div class="product-price">₹12,999</div>
+              </div>
+              <div class="quick-add-box" data-product-id="sp-228">
+                <button class="quick-add-btn" onclick="handleCardAdd('sp-228', event)" title="Add to Bag">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-editorial-bottom-right">
+            Designed for tournament intensity with breathable ripstop mesh and unmatched heel stability.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 2: DESIGN FOR TRAINING
+       ========================================================================== -->
+  <section class="section-training">
+    <div class="container">
+      
+      <div class="training-header">
+        <div>
+          <h2 class="section-title-condensed">DESIGN FOR<br>TRAINING</h2>
+        </div>
+        <div>
+          <div class="training-tag">
+            <span>Sports Run +</span>
+          </div>
+          <p class="training-header-sub">
+            Designed for trainings, our sweat-wicking totality gear lets you keep things moving smoothly from morning track sprints to high-intensity gym sessions.
+          </p>
+        </div>
+      </div>
+
+      <div class="training-grid">
+        <!-- Left Mini Stacked Card -->
+        <div class="training-left-col">
+          <div class="training-mini-card tilt-effect">
+            <img src="assets/images/training-shoes-detail.webp" alt="Training shoes detail" class="training-mini-img" loading="lazy">
+            <p class="training-desc-text">
+              Designed for trainings, Our sweat-wicking totality gear lets you keep things light and fluid.
+            </p>
+            <div class="training-price-tag">Sports Unlimited • ₹7,499</div>
+          </div>
+        </div>
+
+        <!-- Right Large Hero Card: Athlete on Red Track with "★ Highly Rated" Badge -->
+        <div class="training-showcase-card tilt-effect">
+          <img src="assets/images/training-card-red.webp" alt="Athlete resting on red track court" class="bg-image" loading="lazy">
+          
+          <div class="card-pill-badge">
+            <span>★ Highly Rated</span>
+          </div>
+
+          <div class="training-showcase-content">
+            <div class="training-showcase-title">TOTALITY ATHLETIC SPRINT 2.0</div>
+            <p style="font-size: 0.95rem; opacity: 0.9; max-width: 480px; margin-bottom: 16px;">
+              Engineered with temperature-regulating Aeroready fibers to withstand Indian humidity and rigorous multi-sport drills.
+            </p>
+            <a href="running.html" class="view-all-link" style="background: #ffffff; color: #111; border-color: #ffffff;">Shop Running & Training ↗</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 3: OUR PRODUCTS (EXACT REFERENCE SECTION)
+       ========================================================================== -->
+  <section class="section-products">
+    <div class="container">
+      
+      <div class="products-header">
+        <h2 class="section-title-gradient">OUR PRODUCTS</h2>
+        <a href="new-in.html" class="view-all-link">VIEW ALL ↗</a>
+      </div>
+
+      <!-- Sports Category Filter Tabs -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-tab-btn active" onclick="filterProducts('all', this)">All Sports</button>
+        <button class="filter-tab-btn" onclick="filterProducts('Cricket', this)">Cricket Match</button>
+        <button class="filter-tab-btn" onclick="filterProducts('Badminton', this)">Badminton</button>
+        <button class="filter-tab-btn" onclick="filterProducts('Running', this)">Running</button>
+        <button class="filter-tab-btn" onclick="filterProducts('Gym', this)">Gym & Fitness</button>
+        <button class="filter-tab-btn" onclick="filterProducts('Football', this)">Football Turf</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="home-products-grid">
+        <!-- Injected dynamically from Store to ensure accurate images & names -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 4: TO KEEP ALL YOUR GEAR (ASYMMETRIC BENTO GRID)
+       ========================================================================== -->
+  <section class="section-gear-bento">
+    <div class="container">
+      
+      <div class="bento-header">
+        <h2 class="section-title-condensed">TO KEEP<br>ALL YOUR<br>GEAR</h2>
+      </div>
+
+      <div class="bento-grid-container">
+        
+        <!-- Bento Card 1: Tall Runner on Stairs with "★ Highly Rated" Badge -->
+        <div class="bento-card-tall tilt-effect">
+          <div class="bento-img-wrap">
+            <img src="assets/images/gear-runner-stairs.webp" alt="Runner climbing stairs with Stackly shoes" loading="lazy">
+            <span class="card-pill-badge" style="position: absolute; top: 20px; left: 20px; z-index: 2;">★ Highly Rated</span>
+          </div>
+          <div class="bento-content">
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Sports Run + Sports INC</div>
+              <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+                Designed for trainings, Our sweat-wicking totality shorts let you keep things light and focused on the climb.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span style="font-weight: 800; font-size: 1.1rem;">₹4,499</span>
+              <a href="running.html" class="action-btn-sm" style="border-radius: var(--radius-full);">View Gear ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Center Slam Dunk Action Cutout -->
+        <div class="bento-card-dunk tilt-effect">
+          <div>
+            <div style="font-family: var(--font-display); font-size: 1.6rem; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">
+              EXPLOSIVE ELEVATION
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; margin-bottom: 12px;">
+              Carbon-assisted rebound plates tested on professional indoor & turf basketball courts.
+            </p>
+            <a href="new-in.html" style="font-size: 0.85rem; font-weight: 800; color: #ec4899;">Explore Footwear →</a>
+          </div>
+          <img src="assets/images/gear-dunk.webp" alt="Dunk Athlete" loading="lazy">
+        </div>
+
+        <!-- Bento Card 3: Center Bottom Training Gear Specs -->
+        <div class="bento-card-gear-info tilt-effect">
+          <div>
+            <span class="card-pill-badge" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 16px;">
+              BUILT FOR INDIA
+            </span>
+            <h3 style="font-family: var(--font-display); font-size: 1.8rem; text-transform: uppercase; line-height: 1.1; margin-bottom: 8px;">
+              ALL-WEATHER PERFORMANCE
+            </h3>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
+              From Mumbai monsoons to Delhi turf heat, Stackly fabrics wick sweat 3x faster than standard cotton blends.
+            </p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a href="gym.html" class="action-btn-sm" style="background: #ffffff; color: #111; padding: 10px 20px; border-radius: var(--radius-full); display: inline-block;">Shop Gym & Gear</a>
+          </div>
+        </div>
+
+        <!-- Bento Card 4: Right Sitting Athlete -->
+        <div class="bento-card-lifestyle tilt-effect">
+          <div class="lifestyle-img-wrap">
+            <img src="assets/images/gear-sitting-athlete.webp" alt="Athlete relaxing after workout" loading="lazy">
+          </div>
+          <div class="lifestyle-content">
+            <div>
+              <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;">Sports Trial Second</div>
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">Recovery & Athleisure</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">
+                Designed for post-workout cool downs, foam roll sessions, and travel comfort.
+              </p>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+              <span style="font-weight: 800; font-size: 1.1rem;">₹3,899</span>
+              <div class="card-action-box" data-product-id="sp-215">
+                <button class="card-add-bag-btn" onclick="handleCardAdd('sp-215', event)" title="Add to Bag">
+                  <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: INDIAN ATHLETE PERKS
+       ========================================================================== -->
+  <section class="section-trust-perks">
+    <div class="container">
+      <div class="perks-grid">
+        <div class="perk-item">
+          <div class="perk-icon-wrap"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+          <div>
+            <div class="perk-title">Free Express Shipping</div>
+            <div class="perk-desc">On orders over ₹999 anywhere in India</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon-wrap"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <div class="perk-title">100% Genuine Gear</div>
+            <div class="perk-desc">Authenticity certified with Indian warranty</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon-wrap"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg></div>
+          <div>
+            <div class="perk-title">7-Day Easy Exchange</div>
+            <div class="perk-desc">Hassle-free replacement at doorstep</div>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon-wrap"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+          <div>
+            <div class="perk-title">UPI & COD Available</div>
+            <div class="perk-desc">Instant UPI, RuPay, No-Cost EMI & COD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: NEWSLETTER
+       ========================================================================== -->
+  <section class="section-newsletter">
+    <div class="container">
+      <div class="newsletter-content-wrap">
+        <h2 class="newsletter-title">JOIN THE STACKLY CLUB</h2>
+        <p class="newsletter-sub">Get VIP early access to limited edition drops, tournament invitations, and ₹500 discount on your first order.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); if (this.checkValidity()) { window.location.href = '404.html'; } else { this.reportValidity(); }">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+        <div style="font-size: 0.78rem; color: #6b7280;">By subscribing, you agree to receive athletic drops & fitness updates from Stackly Sports India.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COMMON FOOTER
+       ========================================================================== -->
+    <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container-wide">
+      <div class="footer-grid">
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+          <p class="footer-tagline">
+            Engineered for relentless performance. Elevating Indian athletes across running tracks, cricket pitches, and gym floors.
+          </p>
+          <div class="footer-social-links">
+            <a href="404.html" class="social-btn" aria-label="Instagram"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="404.html" class="social-btn" aria-label="YouTube"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+            <a href="404.html" class="social-btn" aria-label="Twitter X"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Sports Categories</div>
+          <div class="footer-links-list">
+            <a href="cricket.html">Cricket Equipment</a>
+            <a href="badminton.html">Badminton Tournament</a>
+            <a href="running.html">Marathon & Running</a>
+            <a href="gym.html">Gym & Weights</a>
+            <a href="football.html">Football Cleats & Balls</a>
+          </div>
+        </div>
+
+                <div>
+          <div class="footer-col-title">Customer Care</div>
+          <div class="footer-links-list">
+            <a href="404.html">Track Your Order</a>
+            <a href="404.html">Saved Wishlist</a>
+            <a href="404.html">Store Locator India</a>
+            <a href="404.html">Return & Refund Policy</a>
+          </div>
+        </div>
+
+                <div>
+          <div class="footer-col-title">Portals</div>
+          <div class="footer-links-list">
+            <a href="404.html">Customer Sign In</a>
+            <a href="404.html">Join Stackly Club</a>
+            <a href="404.html">Admin & Staff Portal</a>
+            <a href="404.html">Store Analytics</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Stackly Sports India Private Limited. All Rights Reserved.</div>
+        <div class="payment-gateways-list">
+          <span class="pay-badge">UPI</span>
+          <span class="pay-badge">RuPay</span>
+          <span class="pay-badge">Visa</span>
+          <span class="pay-badge">Mastercard</span>
+          <span class="pay-badge">Cash on Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-in Cart Drawer -->
+  <div class="cart-drawer-overlay"></div>
+  <aside class="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">YOUR BAG</div>
+      <button class="cart-drawer-close-btn" aria-label="Close Bag">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer-items"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-subtotal-row">
+        <span>Estimated Total</span>
+        <span class="cart-drawer-subtotal">₹0</span>
+      </div>
+      <a href="404.html" class="cart-checkout-btn">Proceed to Checkout</a>
+      <a href="cart.html" class="cart-view-all-btn">View Detailed Bag</a>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="search-modal-overlay">
+    <div class="search-modal-card">
+      <div class="search-input-box">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" class="search-input-field" placeholder="Search cricket bats, badminton racquets, dumbbells, shoes...">
+        <button class="search-close-btn">ESC</button>
+      </div>
+      <div class="search-results-area"></div>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    function renderHomeProducts(filter = 'all') {
+      const container = document.getElementById("home-products-grid");
+      if (!container) return;
+
+      const products = Store.getProducts();
+      const filtered = filter === 'all' ? products : products.filter(p => p.sport === filter);
+
+      let html = "";
+      filtered.forEach(p => {
+        html += `
+          <div class="product-card tilt-effect">
+            <div class="product-card-top">
+              <span class="card-pill-badge">${p.badge || '★ Highly Rated'}</span>
+              <button class="wishlist-toggle-btn ${Store.isInWishlist(p.id) ? 'active' : ''}" onclick="toggleWishlistProduct('${p.id}', this, event)" title="Wishlist">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+            </div>
+            <div class="product-image-container">
+              <a href="product-detail.html?id=${p.id}" style="display: flex; justify-content: center; width: 100%;">
+                <img src="${p.image}" alt="${p.name}" loading="lazy">
+              </a>
+            </div>
+            <div class="product-card-info">
+              <a href="product-detail.html?id=${p.id}" class="product-card-title">${p.name}</a>
+              <div class="product-card-category">${p.category}</div>
+              <div class="product-card-bottom">
+                <div class="product-price-box">
+                  <span class="current-price">${Store.formatINR(p.price)}</span>
+                  ${p.originalPrice ? `<span class="original-price">${Store.formatINR(p.originalPrice)}</span>` : ''}
+                </div>
+                <div class="card-action-box" data-product-id="${p.id}">
+                  ${renderCardActionHtml(p.id)}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function filterProducts(sport, btnEl) {
+      document.querySelectorAll(".filter-tab-btn").forEach(btn => btn.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      renderHomeProducts(sport);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderHomeProducts('all');
+    });
+  </script>
+</body>
+</html>

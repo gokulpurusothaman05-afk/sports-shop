@@ -1,0 +1,1521 @@
+/* ==========================================================================
+   STACKLY SPORTS - MASTER RESPONSIVE STYLESHEET
+   Professional multi-tier responsive system from 320px to 4K displays
+   Covers: Home, Category pages, PDP, Cart, Auth, Customer & Admin Dashboards, 404
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   GLOBAL MOBILE-FIRST DEFAULTS & VIEWPORT SANITIZATION
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+}
+
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base table wrapper touch scrolling */
+.dash-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ==========================================================================
+   TIER 1: ULTRA-WIDE & 4K SCREENS (min-width: 1600px)
+   ========================================================================== */
+@media screen and (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+    padding: 0 40px;
+  }
+  .container-wide {
+    max-width: 1680px;
+    padding: 0 40px;
+  }
+  .hero-backdrop-text {
+    font-size: 15rem;
+  }
+  .hero-athlete-img {
+    max-width: 580px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .training-grid {
+    gap: 32px;
+  }
+  .bento-grid-container {
+    gap: 28px;
+  }
+  .metrics-grid {
+    gap: 28px;
+  }
+}
+
+/* ==========================================================================
+   TIER 2: LARGE DESKTOPS & LAPTOPS (1200px to 1599px)
+   ========================================================================== */
+@media screen and (min-width: 1200px) and (max-width: 1599px) {
+  .container {
+    max-width: 1240px;
+    padding: 0 32px;
+  }
+  .container-wide {
+    max-width: 1360px;
+    padding: 0 32px;
+  }
+  .hero-layout-grid {
+    grid-template-columns: 1fr 1.8fr 1fr;
+    gap: 16px;
+  }
+  .hero-floating-card {
+    width: 155px;
+    padding: 12px;
+  }
+  .hero-floating-card .card-thumb {
+    height: 95px;
+  }
+  .hero-backdrop-text {
+    font-size: 10.5rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 36px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 280px 1fr;
+    gap: 32px;
+  }
+}
+
+/* ==========================================================================
+   TIER 3: SMALL LAPTOPS & TABLETS LANDSCAPE (992px to 1199px)
+   ========================================================================== */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+    padding: 0 24px;
+  }
+  .container-wide {
+    max-width: 1000px;
+    padding: 0 24px;
+  }
+  .main-nav {
+    gap: 18px;
+  }
+  .nav-link {
+    font-size: 0.88rem;
+  }
+  .hero-layout-grid {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 12px;
+  }
+  .hero-floating-card {
+    width: 140px;
+    padding: 10px;
+  }
+  .hero-floating-card .card-thumb {
+    height: 80px;
+  }
+  .hero-backdrop-text {
+    font-size: 8.5rem;
+  }
+  .hero-athlete-img {
+    max-width: 380px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .bento-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .bento-card-tall {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 380px;
+  }
+  .bento-card-lifestyle {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 380px;
+  }
+  .bento-card-dunk {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .bento-card-gear-info {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .pdp-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .pdp-gallery-wrap {
+    min-height: 420px;
+    padding: 30px;
+  }
+  .cart-grid-layout {
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+  }
+  .dashboard-grid {
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 28px;
+  }
+}
+
+/* ==========================================================================
+   TIER 4: TABLETS PORTRAIT (768px to 991px)
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .container, .container-wide {
+    max-width: 720px;
+    padding: 0 20px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  /* Hero Section */
+  .hero-layout-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    text-align: center;
+    gap: 24px;
+  }
+  .hero-backdrop-text {
+    font-size: 7rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: -40px;
+  }
+  .hero-center-stage {
+    min-height: 380px;
+  }
+  .hero-athlete-img {
+    max-width: 360px;
+  }
+  .hero-left-column,
+  .hero-right-column {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+  }
+  
+  /* Grids */
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .bento-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .bento-card-tall,
+  .bento-card-lifestyle {
+    min-height: 340px;
+  }
+  .bento-card-dunk,
+  .bento-card-gear-info {
+    grid-column: 1 / -1;
+  }
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* PDP & Cart */
+  .pdp-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .pdp-gallery-wrap {
+    min-height: 360px;
+  }
+  .cart-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .cart-summary-card {
+    position: static;
+  }
+
+  /* Dashboard */
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .dashboard-sidebar {
+    position: static;
+    width: 100%;
+  }
+  .dashboard-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dash-nav-item {
+    width: 100%;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .dash-addresses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .admin-site-header {
+    height: 68px;
+  }
+  .admin-nav-wrapper {
+    height: 68px;
+    gap: 12px;
+  }
+  .admin-header-actions {
+    gap: 10px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+/* ==========================================================================
+   TIER 5: LARGE MOBILES & PHABLETS (576px to 767px)
+   ========================================================================== */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .container, .container-wide {
+    padding: 0 16px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .top-bar {
+    font-size: 0.74rem;
+    padding: 8px 12px;
+  }
+  .brand-logo {
+    font-size: 1.55rem;
+  }
+  .brand-logo-img {
+    height: 28px;
+  }
+
+  .hero-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
+  .hero-backdrop-text {
+    font-size: 5.2rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: -25px;
+  }
+  .hero-center-stage {
+    min-height: 300px;
+  }
+  .hero-athlete-img {
+    max-width: 280px;
+  }
+  .hero-left-column,
+  .hero-right-column {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .product-image-container {
+    height: 190px;
+  }
+  .product-name {
+    font-size: 0.95rem;
+  }
+  .section-title-condensed,
+  .section-title-gradient {
+    font-size: 2.3rem;
+  }
+
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pdp-grid,
+  .cart-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .cart-summary-card {
+    position: static;
+  }
+
+  /* Dashboard */
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .dashboard-sidebar {
+    position: static;
+    width: 100%;
+    padding: 20px;
+  }
+  .dashboard-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dash-nav-item {
+    width: 100%;
+  }
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .dash-addresses-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .admin-site-header {
+    height: 62px;
+  }
+  .admin-nav-wrapper {
+    height: 62px;
+    gap: 8px;
+  }
+  .admin-header-actions {
+    gap: 8px;
+  }
+  .admin-user-badge {
+    font-size: 0.78rem;
+    padding: 5px 8px;
+    max-width: 140px;
+  }
+  .admin-user-badge span {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .admin-store-btn, .admin-logout-btn {
+    font-size: 0.76rem;
+    padding: 6px 10px;
+    white-space: nowrap !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   TIER 6: STANDARD MOBILE PHONES (376px to 575px)
+   ========================================================================== */
+@media screen and (min-width: 376px) and (max-width: 575px) {
+  .container, .container-wide {
+    padding: 0 14px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Header & Account Button Handling */
+  .site-header {
+    height: 62px;
+  }
+  .nav-wrapper {
+    height: 62px;
+    gap: 6px;
+  }
+  .brand-logo {
+    font-size: 1.45rem;
+    gap: 6px;
+  }
+  .brand-logo-img {
+    height: 25px;
+  }
+  .header-actions {
+    gap: 6px;
+  }
+  .account-btn {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+    max-width: 125px;
+  }
+  .account-btn span {
+    max-width: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .top-bar {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 20px 0 36px;
+  }
+  .hero-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+  }
+  .hero-backdrop-text {
+    font-size: clamp(3.2rem, 14vw, 4.4rem);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: -20px;
+    letter-spacing: -1px;
+    line-height: 0.95;
+    word-break: break-word;
+  }
+  .hero-center-stage {
+    min-height: 270px;
+  }
+  .hero-athlete-img {
+    max-width: 260px;
+  }
+  .hero-floating-card {
+    width: 130px;
+    padding: 10px;
+  }
+  .hero-floating-card .card-thumb {
+    height: 72px;
+  }
+  .hero-left-column,
+  .hero-right-column {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero-editorial-top-left,
+  .hero-editorial-bottom-left,
+  .hero-editorial-top-right,
+  .hero-editorial-bottom-right {
+    text-align: center;
+    max-width: 100%;
+  }
+  .hero-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.88rem;
+  }
+
+  /* Titles & Products */
+  .section-title-condensed,
+  .section-title-gradient {
+    font-size: 2.1rem;
+    line-height: 1.05;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .product-card {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+  }
+  .product-image-container {
+    height: 200px;
+  }
+  .product-name {
+    font-size: 1.02rem;
+  }
+  .product-price {
+    font-size: 1.25rem;
+  }
+
+  /* Training & Bento */
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .training-showcase-card {
+    min-height: 330px;
+    padding: 20px 16px;
+  }
+  .training-showcase-title {
+    font-size: 1.6rem;
+  }
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .bento-card-tall,
+  .bento-card-lifestyle {
+    min-height: 280px;
+    padding: 22px 18px;
+  }
+  .bento-card-dunk {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+    gap: 14px;
+  }
+  .perks-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* PDP & Cart */
+  .pdp-grid,
+  .cart-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .pdp-gallery-wrap {
+    min-height: 290px;
+    padding: 20px;
+  }
+  .pdp-gallery-wrap img {
+    max-height: 230px;
+  }
+  .pdp-title-text {
+    font-size: 1.95rem;
+  }
+  .cart-summary-card {
+    position: static;
+    padding: 20px 16px;
+  }
+  .promo-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .promo-box button {
+    width: 100%;
+  }
+
+  /* Auth */
+  .auth-page-container {
+    padding: 24px 14px;
+  }
+  .auth-card-wrap {
+    padding: 24px 18px;
+    border-radius: var(--radius-lg);
+  }
+  .auth-title {
+    font-size: 1.6rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* ========================================================
+     DASHBOARD (CUSTOMER & ADMIN) RESPONSIVE OPTIMIZATION
+     ======================================================== */
+  .dashboard-wrapper {
+    padding: 20px 0 50px;
+  }
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+  }
+  .dashboard-sidebar {
+    position: static;
+    width: 100%;
+    padding: 18px 16px;
+    border-radius: var(--radius-lg);
+  }
+  .sidebar-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 12px;
+  }
+  .profile-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .profile-name {
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  
+  /* Vertical full-width clean stack for sidebar navigation */
+  .dashboard-nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+  }
+  .dash-nav-item {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.88rem;
+    justify-content: flex-start;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: var(--radius-sm);
+  }
+  .dash-nav-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+  .dash-logout-btn {
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 12px;
+  }
+
+  .dashboard-main-content {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .dash-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .dash-title {
+    font-size: 1.55rem;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+  .dash-section-header .action-btn-sm {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    padding: 9px;
+  }
+  .dash-card {
+    padding: 18px 16px;
+    border-radius: var(--radius-lg);
+    width: 100%;
+  }
+
+  /* Stepper Progress Bar */
+  .order-tracker-stepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 18px 0 8px 0;
+    padding: 0 4px;
+    width: 100%;
+  }
+  .order-tracker-stepper::before {
+    top: 12px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+  }
+  .stepper-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+  }
+  .step-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.65rem;
+  }
+  .step-label {
+    font-size: 0.62rem;
+    line-height: 1.1;
+    max-width: 60px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dash-addresses-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .dash-table {
+    font-size: 0.8rem;
+    min-width: 480px;
+  }
+  .admin-site-header {
+    height: 58px;
+  }
+  .admin-nav-wrapper {
+    height: 58px;
+    gap: 6px;
+  }
+  .admin-header-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .admin-user-badge {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    max-width: 105px;
+    gap: 4px;
+  }
+  .admin-user-badge span {
+    max-width: 55px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .admin-store-btn, .admin-logout-btn {
+    font-size: 0.72rem;
+    padding: 5px 8px;
+    white-space: nowrap !important;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 14px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+  }
+  .toast {
+    min-width: calc(100vw - 28px);
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* ==========================================================================
+   TIER 7: EXTRA SMALL & COMPACT MOBILE SCREENS (320px to 375px)
+   Target: iPhone SE, Galaxy Z Fold, Compact Androids
+   ========================================================================== */
+@media screen and (max-width: 375px) {
+  .container, .container-wide {
+    padding: 0 10px;
+  }
+  .main-nav {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Top Announcement Bar */
+  .top-bar {
+    font-size: 0.63rem;
+    padding: 6px 8px;
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .top-bar-badge {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+
+  /* Header & Compact Account Button */
+  .site-header {
+    height: 58px;
+  }
+  .nav-wrapper {
+    height: 58px;
+    gap: 4px;
+  }
+  .brand-logo {
+    font-size: 1.3rem;
+    gap: 5px;
+  }
+  .brand-logo-img {
+    height: 23px;
+  }
+  .header-actions {
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .account-btn {
+    padding: 5px 8px;
+    font-size: 0.72rem;
+    max-width: 100px;
+    gap: 4px;
+  }
+  .account-btn span {
+    max-width: 58px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .account-btn svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+  .mobile-menu-toggle {
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+    flex-shrink: 0;
+  }
+  .mobile-menu-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 14px 0 28px;
+  }
+  .hero-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    text-align: center;
+  }
+  .hero-backdrop-text {
+    font-size: clamp(2.3rem, 11vw, 3rem);
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: -15px;
+    letter-spacing: -1px;
+    line-height: 0.9;
+    word-break: break-word;
+  }
+  .hero-center-stage {
+    min-height: 230px;
+  }
+  .hero-athlete-img {
+    max-width: 210px;
+  }
+  .hero-floating-card {
+    width: 115px;
+    padding: 7px;
+  }
+  .hero-floating-card .card-thumb {
+    height: 58px;
+  }
+  .hero-floating-card .card-title {
+    font-size: 0.7rem;
+  }
+  .hero-floating-card .card-price {
+    font-size: 0.75rem;
+  }
+  .hero-left-column,
+  .hero-right-column {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero-editorial-top-left,
+  .hero-editorial-bottom-left,
+  .hero-editorial-top-right,
+  .hero-editorial-bottom-right {
+    text-align: center;
+    max-width: 100%;
+  }
+  .hero-cta-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 14px;
+    font-size: 0.8rem;
+  }
+
+  /* Product Catalog */
+  .section-title-condensed,
+  .section-title-gradient {
+    font-size: 1.75rem;
+    line-height: 1.05;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .product-card {
+    padding: 12px;
+    border-radius: var(--radius-md);
+  }
+  .product-image-container {
+    height: 170px;
+  }
+  .product-name {
+    font-size: 0.9rem;
+  }
+  .product-price {
+    font-size: 1.1rem;
+  }
+  .btn-add-cart {
+    font-size: 0.7rem;
+    padding: 6px 9px;
+  }
+  .qty-btn-inline {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  /* Training & Bento */
+  .training-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .training-showcase-card {
+    min-height: 290px;
+    padding: 14px 12px;
+  }
+  .training-showcase-title {
+    font-size: 1.4rem;
+  }
+  .bento-grid-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .bento-card-tall,
+  .bento-card-lifestyle {
+    min-height: 240px;
+    padding: 16px 12px;
+  }
+  .bento-card-dunk {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px 12px;
+    gap: 10px;
+  }
+  .perks-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .perk-card {
+    padding: 14px 10px;
+  }
+
+  /* PDP */
+  .pdp-grid,
+  .cart-grid-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .pdp-gallery-wrap {
+    min-height: 250px;
+    padding: 14px;
+  }
+  .pdp-gallery-wrap img {
+    max-height: 190px;
+  }
+  .pdp-title-text {
+    font-size: 1.65rem;
+  }
+  .pdp-current-price {
+    font-size: 1.55rem;
+  }
+  .pdp-orig-price {
+    font-size: 0.95rem;
+  }
+  .pdp-size-btn {
+    padding: 6px 9px;
+    font-size: 0.72rem;
+  }
+  .pincode-checker-box {
+    padding: 12px;
+  }
+  .pincode-input-group {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pincode-input-group button {
+    width: 100%;
+  }
+
+  /* Cart */
+  .cart-item-row {
+    padding: 10px 8px;
+    gap: 8px;
+  }
+  .cart-summary-card {
+    position: static;
+    padding: 14px 10px;
+    border-radius: var(--radius-md);
+  }
+  .promo-box {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .promo-box button {
+    width: 100%;
+  }
+
+  /* Auth */
+  .auth-page-container {
+    padding: 14px 6px;
+  }
+  .auth-card-wrap {
+    padding: 16px 10px;
+    border-radius: var(--radius-md);
+  }
+  .auth-title {
+    font-size: 1.4rem;
+  }
+  .role-switch-tabs {
+    padding: 2px;
+  }
+  .role-tab-btn {
+    padding: 6px 8px;
+    font-size: 0.72rem;
+    gap: 3px;
+  }
+  .role-tab-btn svg {
+    width: 13px;
+    height: 13px;
+  }
+  .form-input-wrap input {
+    padding: 9px 10px 9px 32px;
+    font-size: 0.84rem;
+  }
+  .form-input-icon {
+    left: 8px;
+    width: 15px;
+    height: 15px;
+  }
+  .auth-submit-btn {
+    padding: 11px;
+    font-size: 0.82rem;
+  }
+
+  /* ========================================================
+     DASHBOARD (CUSTOMER & ADMIN) AT 320px SCREEN
+     ======================================================== */
+  .dashboard-wrapper {
+    padding: 14px 0 36px;
+  }
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+  .dashboard-sidebar {
+    position: static;
+    width: 100%;
+    padding: 14px 10px;
+    border-radius: var(--radius-md);
+  }
+  .sidebar-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .profile-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+  .profile-name {
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
+  .profile-role-badge {
+    font-size: 0.68rem;
+  }
+  
+  /* Vertical full-width list to prevent 320px text clipping */
+  .dashboard-nav-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+  }
+  .dash-nav-item {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    justify-content: flex-start;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius-xs);
+  }
+  .dash-nav-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .dash-logout-btn {
+    width: 100%;
+    margin-top: 6px;
+    padding-top: 10px;
+  }
+
+  .dashboard-main-content {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .dash-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .dash-title {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+  .dash-section-header .action-btn-sm {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+    padding: 8px;
+    font-size: 0.78rem;
+  }
+  .dash-card {
+    padding: 14px 10px;
+    border-radius: var(--radius-md);
+    width: 100%;
+  }
+
+  /* Compact Horizontal Stepper */
+  .order-tracker-stepper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 16px 0 6px 0;
+    padding: 0 2px;
+    width: 100%;
+  }
+  .order-tracker-stepper::before {
+    top: 11px;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+  }
+  .stepper-step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+  }
+  .step-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 0.6rem;
+  }
+  .step-label {
+    font-size: 0.58rem;
+    line-height: 1.05;
+    max-width: 55px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .metric-card {
+    padding: 12px 10px;
+  }
+  .metric-value {
+    font-size: 1.3rem;
+  }
+  .dash-addresses-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .dash-table {
+    font-size: 0.74rem;
+    min-width: 440px;
+  }
+  .dash-table th, .dash-table td {
+    padding: 8px 10px;
+  }
+  .admin-modal-card {
+    padding: 16px 10px;
+    border-radius: var(--radius-md);
+  }
+  .top-bar.admin-top-bar, .admin-top-bar {
+    font-size: 0.6rem;
+    padding: 5px 6px;
+    line-height: 1.25;
+    text-align: center;
+  }
+  .admin-site-header {
+    height: 52px;
+    min-height: 52px;
+  }
+  .admin-nav-wrapper {
+    height: 52px;
+    gap: 4px;
+    padding: 0;
+  }
+  .admin-site-header .brand-logo {
+    font-size: 1.15rem;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .admin-site-header .brand-logo-img {
+    height: 19px;
+  }
+  .admin-header-actions {
+    gap: 3px;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+  }
+  .admin-user-badge {
+    font-size: 0.68rem;
+    padding: 3px 5px;
+    max-width: 65px;
+    gap: 3px;
+  }
+  .admin-user-badge svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+  }
+  .admin-user-badge span {
+    max-width: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .admin-store-btn {
+    font-size: 0.68rem;
+    padding: 4px 7px;
+    white-space: nowrap !important;
+    letter-spacing: -0.2px;
+  }
+  .admin-logout-btn {
+    font-size: 0.68rem;
+    padding: 4px 7px;
+    white-space: nowrap !important;
+  }
+  #btn-add-product {
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-bottom: 24px;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .newsletter-input {
+    font-size: 0.8rem;
+    padding: 9px 12px;
+  }
+  .newsletter-btn {
+    padding: 9px 16px;
+    font-size: 0.8rem;
+  }
+  .toast {
+    min-width: calc(100vw - 20px);
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.8rem;
+    padding: 9px 12px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE NAVIGATION DRAWER & OVERLAY
+   -------------------------------------------------------------------------- */
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 280px;
+  max-width: 85vw;
+  height: 100%;
+  background: #ffffff;
+  z-index: 1050;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  transition: left var(--transition-smooth);
+}
+
+.mobile-nav-drawer.active {
+  left: 0;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-normal);
+}
+
+.mobile-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-links a {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.mobile-nav-links a.active {
+  color: #ec4899;
+}
+
+.mobile-nav-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Landscape mode mobile adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .hero-backdrop-text {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+  }
+  .hero-center-stage {
+    min-height: 220px;
+  }
+  .hero-athlete-img {
+    max-height: 200px;
+    width: auto;
+  }
+  .mobile-nav-drawer {
+    overflow-y: auto;
+  }
+  .auth-page-container {
+    padding: 16px 20px;
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="icon" type="image/webp" href="assets/images/logo.webp">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar admin-top-bar">
+    <span><img src="assets/images/logo.webp" alt="Stackly" class="top-bar-logo-img"> STACKLY INTERNAL PORTAL • STORE OPERATIONS & INVENTORY MANAGER</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header admin-site-header">
+    <div class="container-wide nav-wrapper admin-nav-wrapper">
+      <a href="index.html" class="brand-logo"><img src="assets/images/logo.webp" alt="Stackly" class="brand-logo-img"><span>Stackly</span></a>
+      <div class="admin-header-actions">
+        <span id="admin-user-display" class="admin-user-badge"></span>
+        <a href="index.html" class="admin-store-btn">Live Store ↗</a>
+        <button class="admin-logout-btn" onclick="Store.logoutUser()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container dashboard-wrapper">
+    
+    <!-- KPI Metrics Grid (₹ INR) -->
+    <div class="metrics-grid" style="margin-bottom: 32px;">
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>Gross Revenue (INR)</span>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="metric-value" id="admin-metric-revenue">₹0</div>
+        <div class="metric-trend up">↑ +18.4% this month</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>Total Orders</span>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div class="metric-value" id="admin-metric-orders">0</div>
+        <div class="metric-trend up">↑ +12 new today</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>Catalog Products</span>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="metric-value" id="admin-metric-products">0</div>
+        <div class="metric-trend">28+ active items</div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-header">
+          <span>Average Order Value</span>
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="metric-value" id="admin-metric-aov">₹0</div>
+        <div class="metric-trend up">↑ High AOV</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Recent Orders Management -->
+    <div class="dash-card" style="margin-bottom: 32px; padding: 28px;">
+      <div class="dash-section-header">
+        <div>
+          <h2 class="dash-title">RECENT ORDERS MANAGEMENT</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Manage real-time customer shipments across Indian states</p>
+        </div>
+      </div>
+
+      <div class="dash-table-wrap">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Customer & Location</th>
+              <th>Date</th>
+              <th>Items Ordered</th>
+              <th>Total (INR)</th>
+              <th>Current Status</th>
+              <th>Update Status</th>
+            </tr>
+          </thead>
+          <tbody id="admin-orders-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 2: Product Inventory Management (CRUD) -->
+    <div class="dash-card" style="padding: 28px;">
+      <div class="dash-section-header">
+        <div>
+          <h2 class="dash-title">PRODUCT INVENTORY & PRICING</h2>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Add new athletic products, adjust stock quantities, and update prices in ₹</p>
+        </div>
+        <button class="cart-checkout-btn" id="btn-add-product" style="width: auto; padding: 10px 24px; font-size: 0.85rem; margin-bottom: 0;">
+          + Add New Product
+        </button>
+      </div>
+
+      <div class="dash-table-wrap">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Product Details</th>
+              <th>Sport Domain</th>
+              <th>Selling Price</th>
+              <th>Stock Level</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-inventory-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Add/Edit Product Modal Dialog -->
+  <div class="admin-modal-overlay" id="product-modal">
+    <div class="admin-modal-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h3 id="modal-title" style="font-family: var(--font-display); font-size: 1.6rem; text-transform: uppercase;">Add New Product</h3>
+        <button id="btn-close-modal" style="font-size: 1.5rem; font-weight: 700; color: var(--text-muted);">✕</button>
+      </div>
+
+      <form id="admin-product-form" class="auth-form">
+        <input type="hidden" id="prod-id-hidden">
+
+        <div class="form-group">
+          <label class="form-label">Product Name *</label>
+          <input type="text" id="prod-name" class="newsletter-input" style="background:#fff; color:#111; border-color: var(--border-light); border-radius: var(--radius-sm);" placeholder="e.g. Pro English Willow Bat" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Category *</label>
+            <select id="prod-category" style="padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); background: #fff; font-weight: 600;">
+              <option value="Cricket Equipment">Cricket</option>
+              <option value="Badminton Racquets">Badminton</option>
+              <option value="Road Running Footwear">Running</option>
+              <option value="Gym Free Weights">Gym & Fitness</option>
+              <option value="Football Match Balls">Football</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Sport Domain *</label>
+            <select id="prod-sport" style="padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); background: #fff; font-weight: 600;">
+              <option value="Cricket">Cricket</option>
+              <option value="Badminton">Badminton</option>
+              <option value="Running">Running</option>
+              <option value="Gym">Gym</option>
+              <option value="Football">Football</option>
+              <option value="Basketball">Basketball</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Selling Price (INR ₹) *</label>
+            <input type="number" id="prod-price" class="newsletter-input" style="background:#fff; color:#111; border-color: var(--border-light); border-radius: var(--radius-sm);" placeholder="e.g. 4999" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Original Price (Strikethrough ₹)</label>
+            <input type="number" id="prod-orig-price" class="newsletter-input" style="background:#fff; color:#111; border-color: var(--border-light); border-radius: var(--radius-sm);" placeholder="e.g. 6999">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Stock Units *</label>
+            <input type="number" id="prod-stock" class="newsletter-input" style="background:#fff; color:#111; border-color: var(--border-light); border-radius: var(--radius-sm);" placeholder="e.g. 35" value="25" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image Asset Path (WebP)</label>
+            <select id="prod-image" style="padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-light); background: #fff; font-weight: 600;">
+              <option value="assets/images/cricket-bat.webp">English Willow Bat</option>
+              <option value="assets/images/cricket-ball.webp">Cricket Match Ball</option>
+              <option value="assets/images/cricket-spikes.webp">Cricket Spikes</option>
+              <option value="assets/images/badminton-racquet.webp">Carbon Badminton Racquet</option>
+              <option value="assets/images/shuttlecock.webp">Feather Shuttlecocks</option>
+              <option value="assets/images/running-shoes-volt.webp">Volt Running Shoes</option>
+              <option value="assets/images/dumbbells-hex.webp">Rubber Hex Dumbbells</option>
+              <option value="assets/images/football-match.webp">FIFA Match Football</option>
+              <option value="assets/images/football-cleats.webp">Football Cleats</option>
+              <option value="assets/images/gym-duffle.webp">Endurance Duffle</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Product Description</label>
+          <textarea id="prod-desc" rows="3" class="newsletter-input" style="background:#fff; color:#111; border-color: var(--border-light); border-radius: var(--radius-sm); resize: vertical;" placeholder="Enter key technology, cushioning specs, and athlete benefits..."></textarea>
+        </div>
+
+        <button type="submit" class="cart-checkout-btn" style="background: var(--gradient-brand); margin-top: 10px;">
+          Save Product to Inventory
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-container"></div>
+
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
