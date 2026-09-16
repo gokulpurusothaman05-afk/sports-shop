@@ -43,6 +43,13 @@
   justify-content: center;
   gap: 10px;
   margin-bottom: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.auth-logo:hover {
+  opacity: 0.85;
 }
 
 .auth-title {
